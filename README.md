@@ -25,7 +25,6 @@ npm install next react react-dom typescript tailwindcss @reduxjs/toolkit react-r
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Documentation](#documentation)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Challenges Faced](#challenges-faced)
