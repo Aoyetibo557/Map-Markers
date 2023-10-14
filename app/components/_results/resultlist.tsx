@@ -12,7 +12,7 @@ const ResultList = () => {
   const hasResults = searchResults.length > 0;
 
   return searchInput.length > 0 && (
-    <div className={`absolute top-24 left-12 lg:left-14 z-10 bg-white w-80 lg:w-1/4 rounded-sm shadow-sm`}>
+    <div className={`absolute top-24 left-12 lg:left-14 z-10 bg-white w-72 lg:w-1/4 rounded-sm shadow-sm`}>
       <div className={`bg-blue-500 p-3 font-medium text-slate-100 ${!hasResults && 'rounded-t-sm'}`}>
         <p className={`text-sm`}>{hasResults ? `Found ${searchResults.length} Result` : 'No Results Found'}</p>
       </div>

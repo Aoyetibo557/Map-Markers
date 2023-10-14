@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
-import {  setDetails, setIsResultCardClicked } from '../../redux/autocomplete-slice';
+import {  setDetails, setIsResultCardClicked, setRecentSearches, selectRecentSearches } from '../../redux/autocomplete-slice';
 import PinIcon from "../../../public/pin.png";
 import { SearchResult } from '../../redux/types';
 
@@ -13,10 +13,24 @@ type props = {
 
 export const ResultCard = ({location}: props) => {
   const dispatch = useDispatch<AppDispatch>();
-  
+  const recentSearches = useSelector(selectRecentSearches);
+
+  // i need a function to first check if the location is already in the recent searches array, if it is then do not add it again
+  // if it is not then add it to the array
+  const addLocationToRecentSearches = () => {
+    if(recentSearches.length === 0) {
+      dispatch(setRecentSearches([location]));
+    } else {
+      const isLocationInRecentSearches = recentSearches.some((recentSearch) => recentSearch.name === location.name);
+      if(!isLocationInRecentSearches) {
+        dispatch(setRecentSearches([...recentSearches, location]));
+      }
+    }
+  }
   const handleResultClick = () => {
     dispatch(setDetails(location));
     dispatch(setIsResultCardClicked(true));
+    addLocationToRecentSearches();
   }
 
   return (

@@ -8,6 +8,7 @@ interface AutoCompleteState {
   searchResults: SearchResult[];
   details: SearchResult;
   isResultCardClicked: boolean;
+  recentSearches: SearchResult[];
 }
 
 const initialState: AutoCompleteState = {
@@ -15,6 +16,7 @@ const initialState: AutoCompleteState = {
   searchResults: [],
   details: {} as SearchResult,
   isResultCardClicked: false,
+  recentSearches: [],
 };
 
 export const autoCompleteSlice = createSlice({
@@ -35,6 +37,9 @@ export const autoCompleteSlice = createSlice({
     setIsResultCardClicked: (state, action: PayloadAction<boolean>) => {
       state.isResultCardClicked = action.payload;
     },
+    setRecentSearches: (state, action: PayloadAction<SearchResult[]>) => {
+      state.recentSearches = action.payload;
+    },
   },
 });
 
@@ -43,6 +48,7 @@ export const {
   setSearchResults,
   setDetails,
   setIsResultCardClicked,
+  setRecentSearches,
 } = autoCompleteSlice.actions;
 
 /**
@@ -58,5 +64,7 @@ export const selectSearchResults = (state: RootState) =>
 export const selectDetails = (state: RootState) => state.autoComplete.details;
 export const selectIsResultCardClicked = (state: RootState) =>
   state.autoComplete.isResultCardClicked;
+export const selectRecentSearches = (state: RootState) =>
+  state.autoComplete.recentSearches;
 
 export default autoCompleteSlice.reducer;

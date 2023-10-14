@@ -108,7 +108,7 @@ export const DetailsModal = ({location, isOpen, onClose}: props) => {
             </div>
             <div className={`flex flex-row items-end lg:justify-center gap-1 p-1 mt-7 overflow-scroll`}>
                 {location?.images?.map((image, index) => (
-                    <Image key={index} src={image} alt={location?.name} className={`w-[200px] h-[150px] object-contain`} />
+                    <Image key={index} src={image} alt={location?.name} width={200} height={150} className={`w-[200px] h-[150px] object-contain`} />
                 )).reverse()}
             </div>  
 
