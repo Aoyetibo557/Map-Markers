@@ -31,7 +31,7 @@ npm install next react react-dom typescript tailwindcss @reduxjs/toolkit react-r
 - [Future Improvements](#future-improvements)
 
 ## Introduction
- This project is a simple web application that allows users to search for locations and view the results on a map. The application is built using Next.js, TypeScript, Tailwind CSS, Redux Toolkit, and Leaflet. The application is deployed on Vercel and can be accessed [here](https://location-search.vercel.app/).
+ This project is a simple web application that allows users to search for locations and view the results on a map. The application is built using Next.js, TypeScript, Tailwind CSS, Redux Toolkit, and Leaflet. The application is deployed on Vercel and can be accessed [Ground-signal-test(Location-search)](https://anu-ground-signal-test.vercel.app/).
 ## Technologies Used
 - [Next.js](https://nextjs.org/docs) - The React Framework for Production
 - [TypeScript](https://www.typescriptlang.org/docs/) - TypeScript extends JavaScript by adding types.
