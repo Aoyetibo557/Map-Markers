@@ -88,7 +88,9 @@ The project is structured as follows:
 
 ```
 ## Challenges Faced
-- The biggest chanllenge I faced was getting the markers to show up on the map. I had to do a lot of research and read through the documentation to figure out how to create custom marker. I also had to figure out how to get the markers to show up on the map when a user clicks on a search result. I was able to figure it out by using the Leaflet API and the React-Leaflet library.
+- The biggest challenge i faced occurered when i tried to build the application, i kept getting a refrence error, that pointed towares the leaflet library. `RefrenceError: window is not defined`. Through research i found out that the leaflet library is not compatible with server side rendering. The problem happens when you include the Leaflet library as a dependency in any SSR app using npm/yarn. The error occurs because Leaflet tries to perform actions that depend on the `window` object before an instance of it is even created. I was able to fix the issue by using the dynamic import method to import the leaflet library. Here is a link to the [Github Pr](https://github.com/Leaflet/Leaflet/issues/6552), [NextJs No SSR](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr) I used.
+
+- Another chanllenge I faced was getting the markers to show up on the map. I had to do a lot of research and read through the documentation to figure out how to create custom marker. I also had to figure out how to get the markers to show up on the map when a user clicks on a search result. I was able to figure it out by using the Leaflet API and the React-Leaflet library.
 
 
 ## Future Improvements

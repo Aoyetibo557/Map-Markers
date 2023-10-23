@@ -43,8 +43,6 @@ const Map = ({ locations }: props) => {
         setIsModalOpen(false);
         dispatch(setIsResultCardClicked(false));
     }
-
-   
   return (
     <MapContainer
         center={[ 42.354022, -71.046245]}
@@ -56,7 +54,6 @@ const Map = ({ locations }: props) => {
             attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         /> 
-
         {locations.map((loc, index) => (
             <Marker key={loc.id} position={[loc.location?.lat, loc.location?.lon]} icon={customMarker}
                 eventHandlers={{
@@ -64,15 +61,13 @@ const Map = ({ locations }: props) => {
                         dispatch(setDetails(loc));
                         setIsModalOpen(true);
                     },
-                   
                 }}
             >
                 <Popup>
                     {loc.name}
                 </Popup>  
-             </Marker>
-           
-         ))} 
+            </Marker>
+            ))} 
 
          {isModalOpen && (
             <DetailsModal 
