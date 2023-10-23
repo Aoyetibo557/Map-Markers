@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import {ReduxProvider} from './redux/provider';
 import { Inter } from 'next/font/google'
 import Image from 'next/image';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReduxProvider>
           {children}
+          <Analytics />
         </ReduxProvider>
       </body>
     </html>
